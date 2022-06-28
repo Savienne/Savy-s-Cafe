@@ -1,12 +1,11 @@
 import { Restaurant } from '../models/restaurant.js'
 
-
 function index(req, res) {
   Restaurant.find({})
-    .then(restaurant => {
+    .then(restaurants => {
       res.render('restaurants/index', {
         restaurants,
-        title: "",
+        title: "🍴",
         user: req.user,
       })
     })

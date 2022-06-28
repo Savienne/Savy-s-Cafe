@@ -34,7 +34,7 @@ function index(req, res) {
   function createReview(req, res) {
     Profile.findById(req.user.profile._id)
     .then(profile => {
-      profile.reviews.push(req.body)
+      profile.review.push(req.body)
       profile.save()
       .then(() => {
         res.redirect(`/profiles/${req.user.profile._id}`)

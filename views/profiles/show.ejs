@@ -40,8 +40,8 @@
     <!-- Deletes Cats -->
     <% profile.reviews.forEach(review => { %>
       <h3>
-        <%= getRandomCat() %>
-        <%= cat.name %> is a <%= cat.age %> year old <%= cat.breed %>
+        <%= getReview() %>
+        <%= cat.name %> is a <%= cat.wouldRecommend %> year old <%= cat.%>
         <% if (isSelf) { %>
           <form 
             action="/profiles/reviews/<%= review._id %>?_method=DELETE"
@@ -60,9 +60,9 @@
   <% } %>
 </main>
 
-<% function getRandomCat() { %> 
+<!-- <% function getRandomCat() { %> 
   <% let cats = ["🐈", "🐱", "😸", "😹", "😺", "😻", "😼", "😾", "😿", "🙀"] %> 
   <% return cats[Math.floor(Math.random() * cats.length)] %>
-<% } %> 
+<% } %>  -->
 
 <%- include('../partials/footer') %>

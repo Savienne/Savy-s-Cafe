@@ -5,9 +5,9 @@ import { isLoggedIn } from '../middleware/middleware.js'
 const router = Router()
 //get request
 router.get('/', restaurantsCtrl.index)
-router.post('/', restaurantsCtrl.create)//post request.islogged in protects route
-router.get('/:id', restaurantsCtrl.show)
 router.post('/', isLoggedIn, restaurantsCtrl.create)
+// router.post('/', restaurantsCtrl.create)//post request.islogged in protects route
+router.get('/:id', restaurantsCtrl.show)
 router.patch('/:id/wouldRecommend', isLoggedIn, restaurantsCtrl.wouldRecommend)
 router.get('/:id/edit', isLoggedIn, restaurantsCtrl.edit)
 router.put('/:id', isLoggedIn, restaurantsCtrl.update)

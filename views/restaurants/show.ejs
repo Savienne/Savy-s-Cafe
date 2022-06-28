@@ -3,25 +3,25 @@
 
 <section>
 	<p>Reviewer <%= r.owner.name %>...</p>
-  <h1><%= resturant.name %> 🌮</h1>
-  <h2>I would this Resturant <%= resturant.wouldRecommend ? 'Yes! 😋' : 'No Way! 😫' %></h2>
+  <h1><%= restaurant.name %> 🌮</h1>
+  <h2>I would this Restaurant <%= restaurant.wouldRecommend ? 'Yes! 😋' : 'No Way! 😫' %></h2>
   <% if (user) { %> 
     <form 
-      action="/resturants/<%= resturant._id %>/would-recommend?_method=PATCH" 
+      action="/restaurants/<%= restaurant._id %>/would-recommend?_method=PATCH" 
       method="POST"
     >
       <button class="btn" type="submit">
-        I would <%= resturant.wouldRecommend ? 'No Way!🌮🥺' : 'Yes! 🌮🎉' %>
+        I would <%= restaurant.wouldRecommend ? 'No Way!🌮🥺' : 'Yes! 🌮🎉' %>
       </button>
     </form>
     <!-- making sure user/taco maker is the person logged in -->
-    <% if (resturantowner.equals(user?.profile._id)) { %>  
-        <form action="/resturants/<%= resturant._id %>/edit" method="GET">
-          <button class="btn" type="submit">Edit this Resturant 🌮🚧</button>
+    <% if (restaurantowner.equals(user?.profile._id)) { %>  
+        <form action="/restaurants/<%= restaurant._id %>/edit" method="GET">
+          <button class="btn" type="submit">Edit this Restaurant 🌮🚧</button>
         </form>
       <% } %>
-      <form action="/resturants/<%= resturant._id %>?_method=DELETE" method="POST">
-        <button class="btn" type="submit">Delete this resturant 🌮💀</button>
+      <form action="/restaurants/<%= restaurant._id %>?_method=DELETE" method="POST">
+        <button class="btn" type="submit">Delete this restaurant 🌮💀</button>
       </form>
   <% } %>
 

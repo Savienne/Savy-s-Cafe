@@ -16,11 +16,11 @@ function index(req, res) {
   }
 
   function create(req, res) {
-    req.body.owner = req.user.profile._id //connecting to protected route!
+    req.body.owner = req.user.profile._id 
       req.body.wouldRecommend = !!req.body.wouldRecommend
-    Resturant.create(req.body) //creating taco
-    .then(restaurants => {
-      res.redirect('/resturants')//redirecting to tacos url . not using datda
+    Restaurant.create(req.body) 
+    .then(restaurant => {
+      res.redirect('/restaurants')
     })
     .catch(err => {
       console.log(err)
@@ -61,7 +61,7 @@ function index(req, res) {
     Restaurant.findById(req.params.id)
     .then(restaurant => {
       res.render('restaurants/edit', { //passing to edit page
-        resturant,
+        restaurant,
         title: "edit "
       })
     })

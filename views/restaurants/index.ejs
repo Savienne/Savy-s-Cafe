@@ -5,16 +5,16 @@
     <h1>Restaurants! 🌮🌮🌮</h1>
     <% if (user) { %>
       <h2>Add a review!</h2>
-      <form action="/resturants" method="POST">
+      <form action="/restaurants" method="POST">
         <label>
           Name: 
           <input type="text" name="name" autocomplete="off">
         </label>
         <label>
           Would Recommend?
-          <input type="checkbox" name="yes">
+          <input type="checkbox" name="wouldRecommend">
         </label>
-        <button type="submit">Add Resturant🌮</button>
+        <button type="submit">Add Restaurant🌮</button>
       </form>
   <% } %>
 
@@ -22,8 +22,8 @@
   <% restaurants.forEach(restaurant => { %>
     <li>
       🌮 
-      <a href="/resturants/<%= resturant._id %>"><%= resturant.name %></a> 
-      is <%= resturant.wouldRecommend ? 'Yes!' : 'No Way!' %>
+      <a href="/restaurants/<%= restaurant._id %>"><%= restaurant.name %></a> 
+      is <%= restaurant.wouldRecommend ? 'Yes!' : 'No Way!' %>
     </li>
   <% }) %>
 <%- include('../partials/footer') %>

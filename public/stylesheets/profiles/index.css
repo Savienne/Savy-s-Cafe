@@ -1,8 +1,6 @@
 body {
-  background-image: url("assets/images");
+  background-image: url("/assets/images/background4.jpg");
 }
-
-
 
 .main {
     display: flex;

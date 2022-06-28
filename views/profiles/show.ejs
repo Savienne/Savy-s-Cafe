@@ -18,22 +18,22 @@
     <h2>Add a Review!</h2>
     <form action="/profiles/<%= profile._id %>/reviews" method="POST">
       <label>
-        Name:
+        Name Of Restaurant:
         <input type="text" name="name" autocomplete="off">
       </label>
       <label>
-        Age:
+        Would Recommend?:
         <input type="Boolean" name="Would Recommend?" autocomplete="off">
       </label>
       <label>
-        Breed:
+        General FeedBack?:
         <input type="text" name="location" autocomplete="off">
       </label>
       <button type="submit">Add 😻</button>
     </form>
   <% } %>
   <!-- Displays Cats -->
-  <% if (profile.reviews.length) { %>
+  <% if (profile.review.length) { %>
     <h2>
       <%= isSelf ? "You have" : `${profile.name} has` %> reviews! Here they are! 
     </h2>

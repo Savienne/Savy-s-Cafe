@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const customerSchema = new Schema ({
+const reviewsSchema = new Schema ({
  name: String,
  location: Number,
  reviewedBy: String,
@@ -15,7 +15,7 @@ const customerSchema = new Schema ({
 const profileSchema = new Schema({
   name: String,
   avatar: String,
-  customer: [customerSchema],
+  review: [reviewsSchema],
 }, {
   timestamps: true
 })

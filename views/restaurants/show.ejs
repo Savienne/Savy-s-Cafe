@@ -4,14 +4,14 @@
 <section>
 	<p>Reviewer <%= restaurant.owner.name %>...</p>
   <h1><%= restaurant.name %> 🌮</h1>
-  <h2>I would this Restaurant <%= restaurant.wouldRecommend ? 'Yes! 😋' : 'No Way! 😫' %></h2>
+  <h2>Would you recommend this Restaurant? <%= restaurant.wouldRecommend ? 'Yes! 😋' : 'No Way! 😫' %></h2>
   <% if (user) { %> 
     <form 
-      action="/restaurants/<%= restaurant._id %>/would-recommend?_method=PATCH" 
+      action="/restaurants/<%= restaurant._id %>/flip-wouldRecommend?_method=PATCH" 
       method="POST"
     >
       <button class="btn" type="submit">
-        I would <%= restaurant.wouldRecommend ? 'No Way!🌮🥺' : 'Yes! 🌮🎉' %>
+        <%= restaurant.wouldRecommend ? 'Yes!🌮🥺' : 'No Way! 🌮🎉' %>
       </button>
     </form>
     <!-- making sure user/taco maker is the person logged in -->

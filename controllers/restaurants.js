@@ -43,7 +43,7 @@ function index(req, res) {
     })
   }
 
-  function wouldRecommend(req, res) {
+  function flipwouldRecommend(req, res) {
     Restaurant.findById(req.params.id)
     .then(restaurant => {
       restaurant.wouldRecommend = !restaurant.wouldRecommend
@@ -113,7 +113,7 @@ export {
     index,
     create,
     show,
-    wouldRecommend,
+    flipwouldRecommend,
     edit,
     update,
     deleteRestaurant as delete,

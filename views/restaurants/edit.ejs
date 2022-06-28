@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 <!-- taken from index page -->
 <section>
-  <h1>Edit the Review! 🌮</h1>
+  <h1>Edit the Review! </h1>
   <form action="/restaurants/<%= restaurant._id %>?_method=PUT" method="POST">
     <label>
       Name: 
@@ -18,7 +18,7 @@
       <input 
         type="checkbox" 
         name="Would Recommend?" 
-				<%= restaurant.recommend? ? "checked" : "" %> 
+				<%= restaurant.wouldRecommend ? "checked" : "" %> 
       >
     </label>
     <button type="submit">Edit the Restaurant</button>

@@ -80,7 +80,7 @@ function update(req, res) {
       req.body.wouldRecommend = !!req.body.wouldRecommend
       restaurant.updateOne(req.body, {new: true})
       .then(()=> {
-        res.redirect(`/restaurant/${restaurant._id}`)
+        res.redirect(`/restaurants/${restaurant._id}`)
       })
     } else {
       throw new Error ('🚫 Not authorized 🚫')
@@ -88,7 +88,7 @@ function update(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect(`/restaurant`)
+    res.redirect(`/restaurants`)
   })
 }
 function deleteRestaurant(req, res) {
@@ -97,7 +97,7 @@ function deleteRestaurant(req, res) {
       if (restaurant.owner.equals(req.user.profile._id)) {
         restaurant.delete()
         .then(() => {
-          res.redirect('/restaurant')
+          res.redirect('/restaurants')
         })
       } else {
         throw new Error ('🚫 Not authorized 🚫')

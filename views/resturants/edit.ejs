@@ -1,0 +1,28 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+<!-- taken from index page -->
+<section>
+  <h1>Edit the Review! 🌮</h1>
+  <form action="/resturants/<%= resturant._id %>?_method=PUT" method="POST">
+    <label>
+      Name: 
+      <input 
+        type="text"
+        name="name" 
+        value="<%= resturant.name %>"   
+        autocomplete="off"
+      >
+    </label>
+    <label>
+      Would Recommend?
+      <input 
+        type="checkbox" 
+        name="Would Recommend?" 
+				<%= resturant.recommend? ? "checked" : "" %> 
+      >
+    </label>
+    <button type="submit">Edit the Resturant</button>
+  </form>
+</section>
+<!-- value prefills the form from index -->
+<%- include('../partials/footer') %>

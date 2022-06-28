@@ -1,0 +1,30 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+	<p>Reviewer <%= resturant.owner.name %>...</p>
+  <h1><%= resturant.name %> 🌮</h1>
+  <h2>I would this Resturant <%= resturant.wouldRecommend ? 'Yes! 😋' : 'No Way! 😫' %></h2>
+  <% if (user) { %> 
+    <form 
+      action="/resturants/<%= resturant._id %>/would-recommend?_method=PATCH" 
+      method="POST"
+    >
+      <button class="btn" type="submit">
+        I would <%= resturant.wouldRecommend ? 'No Way!🌮🥺' : 'Yes! 🌮🎉' %>
+      </button>
+    </form>
+    <!-- making sure user/taco maker is the person logged in -->
+    <% if (resturantowner.equals(user?.profile._id)) { %>  
+        <form action="/resturants/<%= resturant._id %>/edit" method="GET">
+          <button class="btn" type="submit">Edit this Resturant 🌮🚧</button>
+        </form>
+      <% } %>
+      <form action="/resturants/<%= resturant._id %>?_method=DELETE" method="POST">
+        <button class="btn" type="submit">Delete this resturant 🌮💀</button>
+      </form>
+  <% } %>
+
+</section>
+
+<%- include('../partials/footer') %>

@@ -26,3 +26,4 @@ router.get('/logout', function (req, res, next) {
 export {
   router
 }
+

@@ -3,13 +3,13 @@
 <!-- taken from index page -->
 <section>
   <h1>Edit the Review! 🌮</h1>
-  <form action="/resturants/<%= resturant._id %>?_method=PUT" method="POST">
+  <form action="/restaurants/<%= restaurant._id %>?_method=PUT" method="POST">
     <label>
       Name: 
       <input 
         type="text"
         name="name" 
-        value="<%= resturant.name %>"   
+        value="<%= restaurant.name %>"   
         autocomplete="off"
       >
     </label>
@@ -21,7 +21,7 @@
 				<%= resturant.recommend? ? "checked" : "" %> 
       >
     </label>
-    <button type="submit">Edit the Resturant</button>
+    <button type="submit">Edit the Restaurant</button>
   </form>
 </section>
 <!-- value prefills the form from index -->

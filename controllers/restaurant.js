@@ -1,12 +1,12 @@
-import { Resturant } from '../models/resturant.js'
+import { Restaurant } from '../models/restaurant.js'
 
 
 function index(req, res) {
-    Resturant.find({})
-    .then(resturants => {
-      res.render('resturants/index', {
-        resturants,
-        title: "🌮",
+  Restaurant.find({})
+    .then(restaurant => {
+      res.render('restaurants/index', {
+        restaurants,
+        title: "",
         user: req.user,
       })
     })
@@ -18,70 +18,70 @@ function index(req, res) {
 
   function create(req, res) {
     req.body.owner = req.user.profile._id //connecting to protected route!
-      req.body.tasty = !!req.body.tasty
+      req.body.wouldRecommend = !!req.body.wouldRecommend
     Resturant.create(req.body) //creating taco
-    .then(resturant => {
+    .then(restaurants => {
       res.redirect('/resturants')//redirecting to tacos url . not using datda
     })
     .catch(err => {
       console.log(err)
-      res.redirect('/resturants')
+      res.redirect('/restaurants')
     })
   }
 
   function show(req, res) {
-    Resturant.findById(req.params.id)
+    Restaurant.findById(req.params.id)
     .populate("owner")//owner/name defined in model for show.ejs
-    .then(resturant => {
-      res.render('resturants/show', {
-        resturant,
-        title: "🌮 show"
+    .then(restaurant => {
+      res.render('restaurants/show', {
+        restaurant,
+        title: "show"
       })
     })
     .catch(err => {
       console.log(err)
-      res.redirect('/resturants')
+      res.redirect('/restaurants')
     })
   }
 
   function wouldRecommend(req, res) {
-    Resturant.findById(req.params.id)
-    .then(resturant => {
-      resturant.wouldRecommend = !resturant.wouldRecommend
-      resturant.save()
+    Restaurant.findById(req.params.id)
+    .then(restaurant => {
+      restaurant.wouldRecommend = !restaurant.wouldRecommend
+      restaurant.save()
       .then(()=> {
-        res.redirect(`/resturants/${resturant._id}`)
+        res.redirect(`/restaurants/${restaurant._id}`)
       })
     })
     .catch(err => {
       console.log(err)
-      res.redirect('/resturants')
+      res.redirect('/restaurants')
     })
   }
   function edit(req, res) {
-    Resturant.findById(req.params.id)
-    .then(resturant => {
-      res.render('resturants/edit', { //passing to edit page
+    Restaurant.findById(req.params.id)
+    .then(restaurant => {
+      res.render('restaurants/edit', { //passing to edit page
         resturant,
-        title: "edit 🌮"
+        title: "edit "
       })
     })
     .catch(err => {
       console.log(err)
-      res.redirect('/resturants')
+      res.redirect('/restaurant')
     })
   }
 
   //needs update to show changes
 
 function update(req, res) {
-  Resturant.findById(req.params.id)
-  .then(resturant => {
-    if (resturant.owner.equals(req.user.profile._id)) {
-      req.body.tasty = !!req.body.tasty
-      resturant.updateOne(req.body, {new: true})
+  Restaurant.findById(req.params.id)
+  .then(restaurant => {
+    if (restaurant.owner.equals(req.user.profile._id)) {
+      req.body.wouldRecommend = !!req.body.wouldRecommend
+      restaurant.updateOne(req.body, {new: true})
       .then(()=> {
-        res.redirect(`/resturants/${resturant._id}`)
+        res.redirect(`/restaurant/${restaurant._id}`)
       })
     } else {
       throw new Error ('🚫 Not authorized 🚫')
@@ -89,16 +89,16 @@ function update(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect(`/resturants`)
+    res.redirect(`/restaurant`)
   })
 }
-function deleteResturant(req, res) {
-    Resturant.findById(req.params.id)
-    .then(resturant => {
-      if (resturant.owner.equals(req.user.profile._id)) {
-        resturant.delete()
+function deleteRestaurant(req, res) {
+  Restaurant.findById(req.params.id)
+    .then(restaurant => {
+      if (restaurant.owner.equals(req.user.profile._id)) {
+        restaurant.delete()
         .then(() => {
-          res.redirect('/resturants')
+          res.redirect('/restaurant')
         })
       } else {
         throw new Error ('🚫 Not authorized 🚫')
@@ -106,7 +106,7 @@ function deleteResturant(req, res) {
     })
     .catch(err => {
       console.log(err)
-      res.redirect('/resturants')
+      res.redirect('/restaurants')
     })
   }
 
@@ -117,7 +117,7 @@ export {
     wouldRecommend,
     edit,
     update,
-    deleteResturant as delete,
+    deleteRestaurant as delete,
 }
 // router.get('/tacos', tacosCtrl.index)
 // import * as tacosCtrl from '../controllers/tacos.js' //importing everything from tacos controller

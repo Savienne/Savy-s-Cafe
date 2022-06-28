@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 
 <section>
-	<p>Reviewer <%= resturant.owner.name %>...</p>
+	<p>Reviewer <%= r.owner.name %>...</p>
   <h1><%= resturant.name %> 🌮</h1>
   <h2>I would this Resturant <%= resturant.wouldRecommend ? 'Yes! 😋' : 'No Way! 😫' %></h2>
   <% if (user) { %> 

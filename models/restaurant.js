@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const resturantSchema = new Schema({
+const restaurantSchema = new Schema({
   name: String,
   addedBy: {type: String.Types.ObjectId, ref: "Profile"},
   reviews: reviewSchema,
@@ -12,8 +12,7 @@ const resturantSchema = new Schema({
 },{
   timestamps: true
 })
-const Resturant = mongoose.model('Resturant', resturantSchema)
-
+const Restaurant = mongoose.model('Restaurant', restaurantSchema)
 export {
-  Resturant
+  Restaurant
 }

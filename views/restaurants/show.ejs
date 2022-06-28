@@ -3,25 +3,25 @@
 
 <section>
 	<p>Reviewer <%= restaurant.owner.name %>...</p>
-  <h1><%= restaurant.name %> </h1>
-  <h2>Would you recommend this Restaurant? <%= restaurant.wouldRecommend ? 'Yes! 😋' : 'No Way! 😫' %></h2>
+  <h1><%= restaurant.name %> 🌮</h1>
+  <h2> Would you reccomend this restaurant? <%= restaurant.wouldRecommend? 'Yes!! 😋' : 'not at all!! 😫' %></h2>
   <% if (user) { %> 
     <form 
       action="/restaurants/<%= restaurant._id %>/flip-wouldRecommend?_method=PATCH" 
       method="POST"
     >
       <button class="btn" type="submit">
-        <%= restaurant.wouldRecommend ? 'Yes!' : 'No Way! ' %>
+        Update Review <%= restaurant.wouldRecommend ? 'Yes!!' : 'not at all!' %>
       </button>
     </form>
     <!-- making sure user/taco maker is the person logged in -->
     <% if (restaurant.owner.equals(user?.profile._id)) { %>  
         <form action="/restaurants/<%= restaurant._id %>/edit" method="GET">
-          <button class="btn" type="submit">Edit this Restaurant </button>
+          <button class="btn" type="submit">Edit this Review!</button>
         </form>
       <% } %>
-      <form action="/restaurants/<%= restaurant._id %>?_method=DELETE" method="POST">
-        <button class="btn" type="submit">Delete this restaurant </button>
+      <form action="/restaurant/<%= restaurant._id %>?_method=DELETE" method="POST">
+        <button class="btn" type="submit">Delete this review! </button>
       </form>
   <% } %>
 

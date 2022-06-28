@@ -29,26 +29,33 @@
         Location:
         <input type="text" name="location" autocomplete="off">
       </label>
+      <label>
+        General Feedback:
+        <input type="text" name="generalFeedback" autocomplete="off">
+      </label>
+
       <button type="submit">Add Review!</button>
     </form>
   <% } %>
   <!-- Displays Cats -->
   <% if (profile.reviews.length) { %>
     <h2>
-      <%= isSelf ? "You have" : `${profile.name} has` %> cats! Here they are! 
+      <%= isSelf ? "You have" : `${profile.name} have left` %> reviews! 
     </h2>
     <!-- Deletes Cats -->
     <% profile.reviews.forEach(review => { %>
       <h3>
-        <!-- <%= getRandomCat() %>
-        <%= cat.name %> is a <%= cat.age %> year old <%= cat.breed %> -->
         <% if (isSelf) { %>
           <form 
             action="/profiles/reviews/<%= review._id %>?_method=DELETE"
             method="POST"
             style="display: inline-block;"
           >
-            <button type="submit">😸 Free <%= cat.name %></button>
+          <%= review.name %>
+          <%= review.location %>
+          <%= review.wouldRecommend %>
+          <%= review.generalFeedback %>
+            <button type="submit"> Delete Review <%= review.name %></button>
           </form>
         <% } %> 
       </h3>
@@ -60,9 +67,9 @@
   <% } %>
 </main>
 
-<% function getRandomCat() { %> 
+<!-- <% function getRandomCat() { %> 
   <% let cats = ["🐈", "🐱", "😸", "😹", "😺", "😻", "😼", "😾", "😿", "🙀"] %> 
   <% return cats[Math.floor(Math.random() * cats.length)] %>
-<% } %> 
+<% } %>  -->
 
 <%- include('../partials/footer') %>

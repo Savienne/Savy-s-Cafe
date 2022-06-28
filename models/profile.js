@@ -2,9 +2,9 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const reviewsSchema = new Schema ({
+const reviewSchema = new Schema ({
  name: String,
- location: Number,
+ location: String,
  reviewedBy: String,
  wouldReccomend: Boolean,
  generalFeedback: String,
@@ -15,7 +15,7 @@ const reviewsSchema = new Schema ({
 const profileSchema = new Schema({
   name: String,
   avatar: String,
-  review: [reviewsSchema],
+  reviews: [reviewSchema],
 }, {
   timestamps: true
 })

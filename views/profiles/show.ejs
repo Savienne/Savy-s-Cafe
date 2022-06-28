@@ -15,54 +15,54 @@
   <!-- Loads cats with profile -->
   <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
   <% if (isSelf) { %>
-    <h2>Add a Review!</h2>
+    <h2>Add a review!</h2>
     <form action="/profiles/<%= profile._id %>/reviews" method="POST">
       <label>
-        Name Of Restaurant:
+        Name of Restaurant:
         <input type="text" name="name" autocomplete="off">
       </label>
       <label>
-        Would Recommend?:
-        <input type="Boolean" name="Would Recommend?" autocomplete="off">
+        Would Recommend:
+        <input type="boolean" name="wouldRecommend" autocomplete="off">
       </label>
       <label>
-        General FeedBack?:
+        Location:
         <input type="text" name="location" autocomplete="off">
       </label>
-      <button type="submit">Add </button>
+      <button type="submit">Add Review!</button>
     </form>
   <% } %>
   <!-- Displays Cats -->
-  <% if (profile.review.length) { %>
+  <% if (profile.reviews.length) { %>
     <h2>
-      <%= isSelf ? "You have" : `${profile.name} has` %> reviews! Here they are! 
+      <%= isSelf ? "You have" : `${profile.name} has` %> cats! Here they are! 
     </h2>
     <!-- Deletes Cats -->
     <% profile.reviews.forEach(review => { %>
       <h3>
-        <%= getReview() %>
-        <%= cat.name %> is a <%= cat.wouldRecommend %> year old <%= cat.%>
+        <!-- <%= getRandomCat() %>
+        <%= cat.name %> is a <%= cat.age %> year old <%= cat.breed %> -->
         <% if (isSelf) { %>
           <form 
             action="/profiles/reviews/<%= review._id %>?_method=DELETE"
             method="POST"
             style="display: inline-block;"
           >
-            <button type="submit"> Remove Review for <%= review.name %></button>
+            <button type="submit">😸 Free <%= cat.name %></button>
           </form>
         <% } %> 
       </h3>
     <% }) %>
   <% } else { %>
     <h2>
-      <%= isSelf ? "You don't" : `${profile.name} dont` %> have any reviews. 
+      <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any reviews. 
     </h2>
   <% } %>
 </main>
 
-<!-- <% function getRandomCat() { %> 
+<% function getRandomCat() { %> 
   <% let cats = ["🐈", "🐱", "😸", "😹", "😺", "😻", "😼", "😾", "😿", "🙀"] %> 
   <% return cats[Math.floor(Math.random() * cats.length)] %>
-<% } %>  -->
+<% } %> 
 
 <%- include('../partials/footer') %>

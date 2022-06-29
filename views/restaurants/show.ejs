@@ -3,7 +3,7 @@
 
 <section>
 	<p>Reviewer <%= restaurant.owner.name %>...</p>
-  <h1><%= restaurant.name %> 🌮</h1>
+  <h1><%= restaurant.name %> </h1>
   <h2> Would you reccomend this restaurant? <%= restaurant.wouldRecommend? 'Yes!! 😋' : 'not at all!! 😫' %></h2>
   <% if (user) { %> 
     <form 

@@ -19,6 +19,7 @@ function index(req, res) {
     Profile.findById(req.params.id)
     .then((profile) => {
       const isSelf = profile._id.equals(req.user.profile._id)
+      console.log(profile.reviews)
       res.render("profiles/show", {
         title: ` ${profile.name}'s profile`,
         profile,

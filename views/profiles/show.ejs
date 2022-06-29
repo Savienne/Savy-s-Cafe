@@ -1,4 +1,5 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/profiles/index.css">
 <%- include('../partials/nav') %>
 
 <main>
@@ -12,7 +13,6 @@
       >
     </div>
   <% } %>
-  <!-- Loads cats with profile -->
   <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
   <% if (isSelf) { %>
     <h2>Add a review!</h2>
@@ -37,15 +37,13 @@
       <button type="submit">Add Review!</button>
     </form>
   <% } %>
-  <!-- Displays Cats -->
   <% if (profile.reviews.length) { %>
     <h2>
-      <%= isSelf ? "You have" : `${profile.name} have left` %> reviews! 
+      <%= isSelf ? "You have" : `${profile.name} has left` %> reviews! 
     </h2>
-    <!-- Deletes Cats -->
     <% profile.reviews.forEach(review => { %>
       <h3>
-        <% if (isSelf) { %>
+        <!-- <% if (isSelf) { %> -->
           <form 
             action="/profiles/reviews/<%= review._id %>?_method=DELETE"
             method="POST"
@@ -57,7 +55,7 @@
           <%= review.generalFeedback %>
             <button type="submit"> Delete Review <%= review.name %></button>
           </form>
-        <% } %> 
+        <!-- <% } %>  -->
       </h3>
     <% }) %>
   <% } else { %>
@@ -66,10 +64,5 @@
     </h2>
   <% } %>
 </main>
-
-<!-- <% function getRandomCat() { %> 
-  <% let cats = ["🐈", "🐱", "😸", "😹", "😺", "😻", "😼", "😾", "😿", "🙀"] %> 
-  <% return cats[Math.floor(Math.random() * cats.length)] %>
-<% } %>  -->
 
 <%- include('../partials/footer') %>

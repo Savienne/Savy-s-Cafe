@@ -1,5 +1,8 @@
 body {
-  background-image: url("/assets/images/background4.jpg");
+  background-image: url("/assets/images/tryfour.jpeg");
+  background-size: 200vh 120vh;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .main {

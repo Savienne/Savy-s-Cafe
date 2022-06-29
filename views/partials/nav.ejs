@@ -1,17 +1,31 @@
-<% if (!user) { %>
+<!-- <% if (!user) { %>
   <link rel="stylesheet" href="/stylesheets/siwg.css">
-<% } %>
+<% } %> -->
 </head>
 <body>
 <nav>
-  <a href="/restaurants">Restaurants🍽</a> 
-  <a href="/profiles">Leave A Review​📗​</a>
+  <a href="/restaurants" class="siwg-link">
+    <button type="submit" class="siwg">
+    <img id="siwg-image" alt="Restaurants "/>
+    </button>
+  </a> 
+  <a href="/profiles" class="siwg-link">
+    <button type="submit" class="siwg">
+      <img id="siwg-link" alt="Leave A Review"/>
+    </button>
+  </a>
   <% if (user) { %>
-    <a href="/auth/logout">Login/Out!👋</a>
+    <a href="/auth/logout">
+            <button type="submit" class="siwg">
+        <img id="siwg-image" alt="Sign In With Google"/>
+      </button>
+
+    <button type="submit">Log Out</button>
+<a>
   <% } else { %>
     <a href="/auth/google" class="siwg-link">
       <button type="submit" class="siwg">
-        <img id="siwg-image" alt="Log In" />
+        <img id="siwg-image" alt="Sign In With Google" />
       </button>
     </a>
   <% } %>

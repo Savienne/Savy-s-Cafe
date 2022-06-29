@@ -13,7 +13,7 @@
       >
     </div>
   <% } %>
-  <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+  <h1><%= isSelf ? ` It's ${profile.name}` : "Check out this profile!" %></h1>
   <% if (isSelf) { %>
     <h2>Add a review!</h2>
     <form action="/profiles/<%= profile._id %>/reviews" method="POST">
@@ -37,32 +37,27 @@
       <button type="submit">Add Review!</button>
     </form>
   <% } %>
-  <% if (profile.reviews.length) { %>
-    <h2>
-      <%= isSelf ? "You have" : `${profile.name} has left` %> reviews! 
-    </h2>
     <% profile.reviews.forEach(review => { %>
       <h3>
-        <!-- <% if (isSelf) { %> -->
-          <form 
-            action="/profiles/reviews/<%= review._id %>?_method=DELETE"
-            method="POST"
-            style="display: inline-block;"
-          >
+        <li>
+          
           <%= review.name %>
           <%= review.location %>
           <%= review.wouldRecommend %>
           <%= review.generalFeedback %>
-            <button type="submit"> Delete Review <%= review.name %></button>
-          </form>
-        <!-- <% } %>  -->
+          <% if (isSelf) { %> -->
+            <form 
+              action="/profiles/reviews/<%= review._id %>?_method=DELETE"
+              method="POST"
+              style="display: inline-block;"
+              >
+            
+            <button type="submit"> Delete <%= review.name %> Review </button>
+            </form>
+          </li>
+        <% } %> 
       </h3>
     <% }) %>
-  <% } else { %>
-    <h2>
-      <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any reviews. 
-    </h2>
-  <% } %>
 </main>
 
 <%- include('../partials/footer') %>

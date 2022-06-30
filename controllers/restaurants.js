@@ -5,7 +5,7 @@ function index(req, res) {
     .then(restaurants => {
       res.render('restaurants/index', {
         restaurants,
-        title: "🍴",
+        title: "",
         user: req.user,
       })
     })

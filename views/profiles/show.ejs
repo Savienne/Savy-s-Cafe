@@ -16,19 +16,21 @@
   <h1><%= isSelf ? ` It's ${profile.name}` : "Check out this profile!" %></h1>
   <% if (isSelf) { %>
     <h2>Add a review!</h2>
-    <form action="/profiles/<%= profile._id %>/reviews" method="POST">
-      <label>
+    <form class="inputform" action="/profiles/<%= profile._id %>/reviews" method="POST">
+      <label class="label">
         Name of Restaurant:
         <input type="text" name="name" autocomplete="off">
       </label>
+      <label class="label">
         Location:
         <input type="text" name="location" autocomplete="off">
       </label>
-      <label>
+      </label>
+      <label class="label">
         General Feedback:
         <input type="text" name="generalFeedback" autocomplete="off">
       </label>
-      <label>
+      <label class="label">
         Would Recommend?:
         <select name="wouldRecommend" id="wouldRecommend">
           <option value="Would Recommend">Would Recommend</option>
@@ -37,9 +39,8 @@
     
       </label>
 
-
-      <button type="submit">Add Review!</button>
     </form>
+    <button type="submit">Add Review!</button>
   <% } %>
     <% profile.reviews.forEach(review => { %>
       <h3>

@@ -48,3 +48,23 @@ body {
     font-size: 24px;
     margin: 0 10px;
   }
+
+  .inputform {
+  
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .inputform label{
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .label {
+    margin:10px;
+  }

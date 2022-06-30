@@ -18,11 +18,11 @@ Wanna See behind the scenes? Heres the process below🚧
 -------------------
 https://trello.com/b/oOEBHTxf/savys-cafe
 
-🟢Github Portfolio 
+🟢Github
 ------------------
 https://github.com/Savienne/Savy-s-Cafe
 
-🟢Portfolio Planning
+🟢Planning
 ------------------
 ERD: https://whimsical.com/savy-s-cafe-erd-JxUtQQxRDQKBg5VKD54cqf
 Wireframe: https://whimsical.com/savy-s-cafe-wireframe-4MhAMWTJP7BUchAghXb7A9

@@ -47,3 +47,10 @@ main {
 h1 {
   font-size: 3.6rem;
 }
+
+.center{
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

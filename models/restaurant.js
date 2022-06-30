@@ -6,7 +6,7 @@ const restaurantSchema = new Schema({
   name: String,
   // addedBy: {type: String},
   review: String,
-  wouldRecommend: Boolean,
+  wouldRecommend: String,
   location: String,
   Feedback: String,
   owner: {type: Schema.Types.ObjectId, ref: "Profile"}//referencingtaco has single owner

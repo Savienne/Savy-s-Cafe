@@ -21,11 +21,6 @@
         Name of Restaurant:
         <input type="text" name="name" autocomplete="off">
       </label>
-      <label>
-        Would Recommend:
-        <input type="boolean" name="wouldRecommend" autocomplete="off">
-      </label>
-      <label>
         Location:
         <input type="text" name="location" autocomplete="off">
       </label>
@@ -45,7 +40,7 @@
           <%= review.location %>
           <%= review.wouldRecommend %>
           <%= review.generalFeedback %>
-          <% if (isSelf) { %> -->
+          <% if (isSelf) { %> 
             <form 
               action="/profiles/reviews/<%= review._id %>?_method=DELETE"
               method="POST"

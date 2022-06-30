@@ -16,17 +16,13 @@
   </a>
   <% if (user) { %>
     <a href="/auth/logout">
-            <button type="submit" class="siwg">
-              Sign In
-      </button>
+     <button type="submit" class="siwg">Log Out</button>
+    </a>
 
-    <button type="submit">Log Out</button>
-<a>
   <% } else { %>
     <a href="/auth/google" class="siwg-link">
       <button type="submit" class="siwg">
-        Sign Out
-      </button>
+      Sign In With Google</button>
     </a>
   <% } %>
 </nav>

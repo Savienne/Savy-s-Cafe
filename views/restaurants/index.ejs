@@ -24,7 +24,7 @@
     <li>
       
       <a href="/restaurants/<%= restaurant._id %>"><%= restaurant.name %></a> 
-      is <%= restaurant.wouldRecommend ? 'Yes!' : 'No Way!' %>
+      <%= restaurant.wouldRecommend ? 'Yes!' : 'No Way!' %>
     </li>
   <% }) %>
 <%- include('../partials/footer') %>

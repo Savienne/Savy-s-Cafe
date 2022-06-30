@@ -9,7 +9,7 @@ What are you waiting for? Come see for yourself! (Click link below)
 🟢 https://savys-cafe.herokuapp.com/restaurants
 
 Screenshot(Preview) 
-<img src="/assets/images/Screen Shot 2022-06-30 at 12.50.08 PM.png">
+<img src="public/assets/images/Screen Shot 2022-06-30 at 12.50.08 PM.png">
 
 
 Wanna See behind the scenes? Heres the process below🚧

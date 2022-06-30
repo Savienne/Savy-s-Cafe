@@ -30,11 +30,17 @@ Wireframe: https://whimsical.com/savy-s-cafe-wireframe-4MhAMWTJP7BUchAghXb7A9
 
 Technologies Used 💻
 ------------------
-1.HTML
-2.CSS
-3.Javascript
-4. MongoDB
-5.Node
+1.HTML  
+
+2.CSS  
+
+3.Javascript  
+
+4.MongoDB  
+
+5.Node  
+
+6.Google OAuth
 
 Credits 🤝
 ------------------

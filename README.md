@@ -41,11 +41,9 @@ Credits 🤝
 
 https://getbootstrap.com/
 
-https://medium.com/@nerdplusdog/a-how-to-guide-for-modal-boxes-with-javascript-html-and-css-6a49d063987e
 
 https://tools.picsart.com
 
-https://birdfeederhub.com/
 
 Ice Box (Future Items) 
 ----------------------

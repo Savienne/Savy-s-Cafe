@@ -11,13 +11,7 @@ html {
   box-sizing: inherit;
 }
 
-/* resets font size to be 62.5% of the user preference - in most browser configurations this will be 10px */
-:root {
-  /* font-size: 62.5%; */
-}
-
 *body {
-  background-image: url("/assets/images/minniesnewbackground.jpeg");
   background-size: auto;
   /* background-color: rgb(148, 154, 66);
   /* Use a system font, if none are available use an available sans-sarif font */
@@ -26,35 +20,3 @@ html {
   margin: 0; 
 }
 
-/* nav {
-  background-color: rgb(186, 84, 84);
-  font-size: 1.6rem;
-  display: flex;
-  justify-content: center;
-} */
-
-/* main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-image: url("/assets/images/minniesnewbackground.jpeg");
-  background-size: auto;
-
-
-}
-
-h1 {
-  font-size: 3.6rem;
-}
-
-.center{
-  display: flex; 
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.googlepic{
-  border-radius: 50px;
-} */

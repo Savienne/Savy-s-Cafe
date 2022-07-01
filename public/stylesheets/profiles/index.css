@@ -45,15 +45,6 @@ body {
     font-size: 24px;
     margin: 0 10px;
   }
-
-  .inputform {
-  
-      /* display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center; */
-  }
-
   .inputform label{
 
       display: flex;
@@ -72,7 +63,6 @@ body {
 
   #navbarTogglerDemo03 {
     display: flex;
-    /* flex-direction: row; */
     align-items: flex-start;
   }
 
@@ -139,10 +129,7 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: url("/assets/images/minniesnewbackground.jpeg");
   background-size: auto;
-
-
 }
 
 h1 {

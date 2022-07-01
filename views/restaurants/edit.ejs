@@ -1,7 +1,6 @@
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/profiles/index.css">
 <%- include('../partials/nav') %>
-<!-- taken from index page -->
 <section>
   <h1>Edit the Review! </h1>
   <form action="/restaurants/<%= restaurant._id %>?_method=PUT" method="POST">
@@ -25,5 +24,4 @@
     <button type="submit">Edit the Restaurant</button>
   </form>
 </section>
-<!-- value prefills the form from index -->
 <%- include('../partials/footer') %>

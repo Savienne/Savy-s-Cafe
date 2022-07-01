@@ -2,11 +2,11 @@ import { Restaurant } from '../models/restaurant.js'
 
 function index(req, res) {
   Restaurant.find({})
-    .then(restaurants => {
-      res.render('restaurants/index', {
-        restaurants,
-        title: "",
-        user: req.user,
+  .then(restaurants => {
+    res.render('restaurants/index', {
+      restaurants,
+      title: "",
+      user: req.user,
       })
     })
     .catch(err => {
@@ -17,7 +17,7 @@ function index(req, res) {
 
   function create(req, res) {
     req.body.owner = req.user.profile._id 
-      req.body.wouldRecommend = !!req.body.wouldRecommend
+    req.body.wouldRecommend = !!req.body.wouldRecommend
     Restaurant.create(req.body) 
     .then(restaurant => {
       res.redirect('/restaurants')
@@ -30,7 +30,7 @@ function index(req, res) {
 
   function show(req, res) {
     Restaurant.findById(req.params.id)
-    .populate("owner")//owner/name defined in model for show.ejs
+    .populate("owner")
     .then(restaurant => {
       res.render('restaurants/show', {
         restaurant,
@@ -60,7 +60,7 @@ function index(req, res) {
   function edit(req, res) {
     Restaurant.findById(req.params.id)
     .then(restaurant => {
-      res.render('restaurants/edit', { //passing to edit page
+      res.render('restaurants/edit', { 
         restaurant,
         title: "edit "
       })
@@ -70,8 +70,6 @@ function index(req, res) {
       res.redirect('/restaurant')
     })
   }
-
-  //needs update to show changes
 
 function update(req, res) {
   Restaurant.findById(req.params.id)
@@ -118,11 +116,3 @@ export {
     update,
     deleteRestaurant as delete,
 }
-// router.get('/tacos', tacosCtrl.index)
-// import * as tacosCtrl from '../controllers/tacos.js' //importing everything from tacos controller
-//   console.log("TACOS 🌮") //test for console log
-
-
-//singular when finding singular items
-//plural when multiple
-//similiar to new meal page where we we removed duplicates

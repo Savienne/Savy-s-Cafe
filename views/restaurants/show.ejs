@@ -6,7 +6,6 @@
   <h1><%= restaurant.name %> </h1>
   <h2> Would you reccomend this restaurant? <%= restaurant.wouldRecommend? 'Yes!! 😋' : 'not at all!! 😫' %></h2>
   <% if (user) { %> 
-    <!-- making sure user/taco maker is the person logged in -->
     <% if (restaurant.owner.equals(user?.profile._id)) { %>  
       <form 
         action="/restaurants/<%= restaurant._id %>/flip-wouldRecommend?_method=PATCH" 
@@ -24,7 +23,6 @@
       </form>
     <% } %>
   <% } %>
-
 </section>
 
 <%- include('../partials/footer') %>

@@ -5,10 +5,10 @@ const Schema = mongoose.Schema
 const restaurantSchema = new Schema({
   name: String,
   review: String,
-  wouldRecommend: String,
+  wouldRecommend: Boolean,
   location: String,
   Feedback: String,
-  owner: {type: Schema.Types.ObjectId, ref: "Profile"}//referencingtaco has single owner
+  owner: {type: Schema.Types.ObjectId, ref: "Profile"}
 },{
   timestamps: true
 })

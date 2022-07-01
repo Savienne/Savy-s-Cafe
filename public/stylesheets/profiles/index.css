@@ -1,9 +1,9 @@
 body {
   background-image: url("/assets/images/sincerely-media-ez9IPcFL5r8-unsplash.jpg");
-  background-size: 200vh 120vh;
+  /* background-size: 200vh 120vh;
   background-repeat: no-repeat;
   overflow: hidden;
-  background-size: cover;
+  background-size: cover; */
 }
 
 .main {

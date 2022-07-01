@@ -4,13 +4,6 @@ body {
   background-repeat: no-repeat;
 }
 
-@media(max-width: 480px) {
-  body{
-    background-image: url("/assets/images/sincerely-media-ez9IPcFL5r8-unsplash.jpg");
-    background-size: cover;
-  }
-}
-
 .main {
     display: flex;
     justify-content: center;

@@ -9,7 +9,7 @@ What are you waiting for? Come see for yourself! (Click link below)
 🟢 https://savys-cafe.herokuapp.com/restaurants
 
 Screenshot(Preview) 
-<img src="public/assets/images/Screen Shot 2022-06-30 at 12.50.08 PM.png">
+<img src="public/assets/images/Screen Shot 2022-07-01 at 12.13.58 AM.png">
 
 
 Wanna See behind the scenes? Heres the process below🚧
@@ -40,7 +40,9 @@ Technologies Used 💻
 
 5.Node  
 
-6.Google OAuth
+6.Google OAuth  
+
+7.Bootstrap
 
 Credits 🤝
 ------------------
@@ -50,6 +52,11 @@ https://getbootstrap.com/
 
 https://tools.picsart.com
 
+
+https://unsplash.com/s/photos/coffee-clean  
+
+
+https://www.angularjswiki.com/fontawesome/fa-coffee/
 
 Ice Box (Future Items) 
 ----------------------

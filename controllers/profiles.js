@@ -33,6 +33,7 @@ function index(req, res) {
   } 
 
   function createReview(req, res) {
+    req.body.wouldRecommend = !! req.body.wouldRecommend
     Profile.findById(req.user.profile._id)
     .then(profile => {
       profile.reviews.push(req.body)

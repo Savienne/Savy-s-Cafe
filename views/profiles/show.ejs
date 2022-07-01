@@ -32,15 +32,12 @@
       </label>
       <label class="label">
         Would Recommend?:
-        <select name="wouldRecommend" id="wouldRecommend">
-          <option value="Would Recommend">Would Recommend</option>
-          <option value="Would Not Recommend">Would Not Recommend</option>
-        </select>
-    
+        
+      <input type="checkbox" name="wouldRecommend">    
       </label>
 
+      <button type="submit">Add Review!</button>
     </form>
-    <button type="submit">Add Review!</button>
   <% } %>
     <% profile.reviews.forEach(review => { %>
       <h3>
@@ -48,8 +45,8 @@
           
           <%= review.name %>
           <%= review.location %>
-          <%= review.wouldRecommend %>
           <%= review.generalFeedback %>
+          <%= review.wouldRecommend ? 'Would recommend' : 'Would not recommend' %>  
           <% if (isSelf) { %> 
             <form 
               action="/profiles/reviews/<%= review._id %>?_method=DELETE"

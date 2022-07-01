@@ -6,7 +6,7 @@ const reviewSchema = new Schema ({
  name: String,
  location: String,
  reviewedBy: String,
- wouldReccomend: Boolean,
+ wouldRecommend: Boolean,
  generalFeedback: String,
 
 },{

@@ -1,11 +1,12 @@
 <%- include('./partials/html-head') %>
+<link rel="stylesheet" href="public/stylesheets/profiles/index.css">
 <%- include('./partials/nav') %>
 
 <main>
   <h1> Welcome To Minnie's Cafe'! <%= user ? user.profile.name : "" %></h1>
   <% if (user?.profile.avatar) { %>
     <div>
-      <img
+      <img id="googlepic2"
         src="<%= user.profile.avatar %>"
         alt="<%= user.profile.name %> avatar>"
       />

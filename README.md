@@ -61,4 +61,8 @@ https://www.angularjswiki.com/fontawesome/fa-coffee/
 Ice Box (Future Items) 
 ----------------------
 
-Animations! Lots of Animations! 
+Animations! Lots of Animations!   
+
+Adding API to add online reservations or place online order.  
+
+Adding UI to upload photos of restaurants
